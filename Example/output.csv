@@ -1,0 +1,4 @@
+make,model,condition,grade,capacity,colour,network,count
+AASTRA,6865I,Working,"Grade B - Good Condition","Not Applicable",Black,"Not Applicable",1
+AASTRA,6865I,Working,"Grade A - Very Good Condition","Not Applicable",Blue,"Not Applicable",1
+AASTRA,test,Working,"Grade B - Good Condition","Not Applicable",Black,"Not Applicable",1
