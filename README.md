@@ -13,7 +13,7 @@
 
 
 
-Test case
+Test case (Please check attached pdf file)
 1. Files not added ==> php parser.php
 2. Only input File added ==> php parser.php --inputFile="new.csv"
 3. Only input and output file added ==> php parser.php --inputFile="new.csv" --outputFile="output.csv"
