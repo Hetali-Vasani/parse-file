@@ -1,13 +1,11 @@
 <?php
 var_dump(memory_get_usage(true));
-	$getOptions = (getopt(null, ['outputFile:', 'inputFile:','properties:']));
+	$getOptions = (getopt(null, ['outputFile:', 'inputFile:']));
 	$fileArray = (getopt(null, ['outputFile:', 'inputFile:']));
 	$fileArray=getArrayValuesRecursively($fileArray);
-	$properties=getArrayValuesRecursively(getopt(null, ['properties:']));
-	foreach($properties as $element){
-	    $element = explode(':', $element);
-	    $realOpt[$element[0]] = $element[1];
-	}
+	$headerName = '{"model":"model_name","make":"brand_name","colour":"colour_name","capacity":"gb_spec_name","network":"network_name","grade":"grade_name","condition":"condition_name","count":"count"}';
+	$realOpt=json_decode($headerName,true);
+
 	if(empty($error = checkAllFilesAndProperties($getOptions))){
 		if(empty($error = checkFileExistOrNot($fileArray))){
 			$csv=array();
@@ -82,8 +80,6 @@ var_dump(memory_get_usage(true));
 			$error['error']['input_files_error'] ='There is no input file exist for prasing!';
 		}if(!isset($getOptions['outputFile'])){
 			$error['error']['output_files_error'] ='There is no output file for store data!';
-		}if(!isset($getOptions['properties'])){
-			$error['error']['properties_error'] ='There are no properties defined for prasing';
 		}
 		return $error;
 	}
